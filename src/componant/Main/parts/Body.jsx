@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Link, Select, Text } from "@chakra-ui/react";
 import React from "react";
-import { Mobile, Toys, Cloth, Hardware } from "../../../Data";
+import Data from "../../../Data";
 // import CaptionCarousel from "./Corusal";
 const Body = () => {
   return (
@@ -38,6 +38,7 @@ const Body = () => {
           </Flex>
         ))}
       </Flex> */}
+      <Data />
     </Box>
   );
 };
