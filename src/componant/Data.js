@@ -12,7 +12,6 @@ const Data = () => {
       .then((data) => data.json())
       .then((dat) => Setdat(dat));
   }, []);
-  console.log(dataa);
 
   return (
     <Flex flexWrap={"wrap"} justify={"space-evenly"}>
@@ -23,12 +22,12 @@ const Data = () => {
             justify={"center"}
             alignItems={"center"}
             flexDirection={"column"}
-            boxShadow={"2xl"}
+            // boxShadow={"2xl"}
             w={"30%"}
-            border={"1px"}
+            // border={"1px"}
             my={2}
             p={5}
-            _hover={{ bg: "red" }}
+            _hover={{ bg: "#ebebe0" }}
           >
             <Image w={"8rem"} h={"10rem"} src={e.image} fit={"contain"} />
             <Text>{e.title}</Text>
