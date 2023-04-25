@@ -24,6 +24,7 @@ const Login = ({ setOpen }) => {
       bg={"blackAlpha.500"}
       justify={"center"}
       align={"center"}
+      zIndex={100}
     >
       <Flex
         borderLeftRadius={"10px"}
