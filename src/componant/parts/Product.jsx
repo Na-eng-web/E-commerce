@@ -17,8 +17,10 @@ import React from "react";
 import { BsCartCheck } from "react-icons/bs";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { MdLocalOffer } from "react-icons/md";
+import { UseCart } from "../../Contex/CartContex";
 
 const Product = ({ prd }) => {
+  const { item, setItem } = UseCart();
   return (
     <Flex bg={"red.200"} px={10} w={"100%"} h={"100vh"}>
       <Flex
@@ -38,7 +40,16 @@ const Product = ({ prd }) => {
           <Image src={prd.image} fit={"contain"} />
         </Flex>
         <Flex m={3} justify={"center"} w={"100%"}>
-          <Button p={4} color={"White"} mr={5} w={"30%"} colorScheme="yellow">
+          <Button
+            onClick={() => {
+              setItem([...item, prd]);
+            }}
+            p={4}
+            color={"White"}
+            mr={5}
+            w={"30%"}
+            colorScheme="yellow"
+          >
             <Icon as={BsCartCheck} w={7} h={7} color={"white"} />
             <Text> ADD TO CART </Text>
           </Button>

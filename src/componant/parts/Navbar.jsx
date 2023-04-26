@@ -20,7 +20,15 @@ const Navbar = () => {
   return (
     <>
       {open && <Login setOpen={setOpen} />}
-      <Box color={"white"} bg={"blue.400"} p={4} px={10}>
+      <Box
+        w={"100%"}
+        zIndex={50}
+        position={"fixed"}
+        color={"white"}
+        bg={"blue.400"}
+        p={4}
+        px={10}
+      >
         <Flex justifyContent={"space-evenly"}>
           <Box p={1} h={"2rem"}>
             <Image

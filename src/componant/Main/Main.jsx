@@ -2,12 +2,12 @@ import { Box } from "@chakra-ui/react";
 import Navbar from "../parts/Navbar";
 import Body from "../parts/Body";
 import Footer from "../parts/Footer";
-import FIlterBar from "../parts/FIlterBar";
+import Cart from "../parts/Cart";
 const Main = () => {
   return (
     <Box>
       <Navbar />
-      <FIlterBar />
+      <Cart />
       <Body />
       <Footer />
     </Box>

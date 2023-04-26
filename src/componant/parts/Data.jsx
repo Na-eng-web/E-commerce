@@ -13,7 +13,6 @@ const Data = ({ Setprd, Setproduct }) => {
       .then((data) => data.json())
       .then((dat) => Setdat(dat));
   }, []);
-  console.log(dataa);
   return (
     <Flex flexWrap={"wrap"} justify={"space-evenly"}>
       {dataa.map((e, index) => {
