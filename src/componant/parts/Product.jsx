@@ -11,7 +11,9 @@ import {
   Table,
   Td,
   Text,
+  Toast,
   Tr,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { BsCartCheck } from "react-icons/bs";
@@ -21,6 +23,8 @@ import { UseCart } from "../../Contex/CartContex";
 
 const Product = ({ prd }) => {
   const { item, setItem } = UseCart();
+  const toast = useToast();
+
   return (
     <Flex bg={"red.200"} px={10} w={"100%"} h={"100vh"}>
       <Flex
@@ -43,6 +47,13 @@ const Product = ({ prd }) => {
           <Button
             onClick={() => {
               setItem([...item, prd]);
+              toast({
+                title: "Prduct Added to cart",
+                status: "success",
+                position: "top-right",
+                duration: 9000,
+                isClosable: true,
+              });
             }}
             p={4}
             color={"White"}

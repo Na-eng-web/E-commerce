@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Icon, Image, Text } from "@chakra-ui/react";
+import { Button, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { BsCurrencyRupee } from "react-icons/bs";
@@ -6,6 +6,8 @@ import React from "react";
 
 const Data = ({ Setprd, Setproduct }) => {
   const [dataa, Setdat] = useState([]);
+  const [a, Seta] = useState(10);
+
   useEffect(() => {
     fetch(
       "https://content.newtonschool.co/v1/pr/63b6c911af4f30335b4b3b89/products"
@@ -13,9 +15,10 @@ const Data = ({ Setprd, Setproduct }) => {
       .then((data) => data.json())
       .then((dat) => Setdat(dat));
   }, []);
+
   return (
     <Flex flexWrap={"wrap"} justify={"space-evenly"}>
-      {dataa.map((e, index) => {
+      {dataa.slice(0, a).map((e, index) => {
         return (
           <Flex
             cursor={"pointer"}
@@ -29,6 +32,7 @@ const Data = ({ Setprd, Setproduct }) => {
             onClick={() => {
               // eslint-disable-next-line
               window.scrollTo({ top: 0, behavior: "smooth" });
+              // eslint-disable-next-line
               return Setprd(e), Setproduct(true);
             }}
           >
@@ -80,6 +84,15 @@ const Data = ({ Setprd, Setproduct }) => {
           </Flex>
         );
       })}
+      <Flex align={"center"}>
+        {a === 10 ? (
+          <Button colorScheme="green" onClick={() => Seta(20)}>
+            SEE MORE
+          </Button>
+        ) : (
+          ""
+        )}
+      </Flex>
     </Flex>
   );
 };

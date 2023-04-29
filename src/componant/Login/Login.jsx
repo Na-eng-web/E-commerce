@@ -1,11 +1,8 @@
 import {
-  Box,
   Button,
-  Center,
   CloseButton,
   Flex,
   FormControl,
-  FormLabel,
   Input,
   Link,
   Text,
@@ -13,7 +10,7 @@ import {
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Login = ({ setOpen }) => {
+const Login = ({ setOpen, setUser }) => {
   const { register, handleSubmit } = useForm();
 
   return (
@@ -52,10 +49,15 @@ const Login = ({ setOpen }) => {
         flexDirection={"column"}
         p={5}
       >
-        <form onSubmit={handleSubmit((data) => console.log(data))}>
+        <form
+          onSubmit={handleSubmit((data) => {
+            setOpen(false);
+            return setUser(data);
+          })}
+        >
           <FormControl my={7} isRequired>
             <Input
-              {...register("Name", { required: true })}
+              {...register("name", { required: true })}
               type="text"
               placeholder="Enter Email/Mobile Number"
             />

@@ -3,12 +3,16 @@ import Navbar from "../parts/Navbar";
 import Body from "../parts/Body";
 import Footer from "../parts/Footer";
 import Cart from "../parts/Cart";
+import { Navigate, Route, Routes } from "react-router-dom";
+
 const Main = () => {
   return (
     <Box>
       <Navbar />
-      <Cart />
-      <Body />
+      <Routes>
+        <Route path="/Body" element={<Body />} />
+        <Route path="/Cart" element={<Cart />} />
+      </Routes>
       <Footer />
     </Box>
   );
